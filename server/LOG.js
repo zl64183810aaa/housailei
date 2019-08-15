@@ -6,6 +6,7 @@ const cors=require("cors")
 var mapp=express();
 mapp.listen(6000);
 
+
 mapp.use(cors({
   origin:"http://localhost:8080/"
 }));//从此所有响应，自动带Access-Control-Allow-Origin:http://127.0.0.1:5500
