@@ -6,6 +6,27 @@ import MintUI from "mint-ui"
 import axios from "axios"
 
 axios.defaults.withCredentials=true
+
+  axios.jsonp=function(url,data){
+    return new Promise(
+      function(resolve,reject){
+        var script=null;
+        var ms=new Date().getTime();
+        var r=parseInt(Math.random()*9000+1000);
+        var fname=`doit${ms}${r}`;
+        window[fname]=function(res){
+          resolve(res);
+          document.head.removeChild(script);
+          delete window[fname];
+        }
+        script=document.createElement("script");
+        script.src=`${url}?${data}&&callback=${fname}`;
+        document.head.appendChild(script);
+      }
+    )   
+  }
+
+
 Vue.prototype.axios=axios;
 Vue.use(MintUI)
 
