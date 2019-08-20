@@ -20,19 +20,3 @@ CREATE TABLE gol_user(
 INSERT INTO gol_user VALUES
 (1,'didadida','123456','13412345678','1');
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
