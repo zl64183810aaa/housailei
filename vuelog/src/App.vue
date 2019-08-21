@@ -11,11 +11,9 @@ export default {
 <style>
 #app {
   display:flex;
-  width:23.4rem;
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
   /* background-color:#2f8cfc; */
 }

@@ -8,6 +8,8 @@ import MintUI from "mint-ui"
 import "mint-ui/lib/style.css"
 // 将mint-ui注册到vue实例中
 Vue.use(MintUI)
+
+
 // 将字体图标引入到当前项目中
 import "./font/iconfont.css"
 // 引入axios第三方ajax模块
