@@ -3,53 +3,24 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import MintUI from "mint-ui"
-import axios from "axios"
 
-axios.defaults.withCredentials=true
-
-  axios.jsonp=function(url,data){
-    return new Promise(
-      function(resolve,reject){
-        var script=null;
-        var ms=new Date().getTime();
-        var r=parseInt(Math.random()*9000+1000);
-        var fname=`doit${ms}${r}`;
-        window[fname]=function(res){
-          resolve(res);
-          document.head.removeChild(script);
-          delete window[fname];
-        }
-        script=document.createElement("script");
-        script.src=`${url}?${data}&&callback=${fname}`;
-        document.head.appendChild(script);
-      }
-    )   
-  }
-
-
-Vue.prototype.axios=axios;
+// 单独引入mint-ui中的样式文件
+import "mint-ui/lib/style.css"
+// 将mint-ui注册到vue实例中
 Vue.use(MintUI)
+// 将字体图标引入到当前项目中
+import "./font/iconfont.css"
+// 引入axios第三方ajax模块
+import axios from "axios"
+// 配置axios基础路径
+// axios.defaults.baseURL="http://127.0.0.1:3000/"
+//配置axios保存session信息
+axios.defaults.withCredentials=true
+// 将axios注册到vue实例中
+// 由于axios不支持use  将实例添加vue原型
+Vue.prototype.axios=axios;
 
-import Vuex from "vuex"
-Vue.use(Vuex)
-// var store=new Vuex.Store({
-//     state:{cartCount:0},//共享数据
-//     mutations:{//添加修改数据的函数
-//       increment(state){
 
-//       },
-//       clear(state){
-        
-//       }
-//     },
-//     getters:{//添加获取数据的函数
-//       getCartCount(state){
-
-//       }
-//     },
-//     actions:{}  //添加异步操作数据的函数
-
-// })
 Vue.config.productionTip = false
 
 new Vue({
