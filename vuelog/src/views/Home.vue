@@ -3,11 +3,11 @@
     <!-- 导航 登录 -->
     <div class="page-head">
       <div  class="loginDiv">
-        <img src="../../assets/notlog.png" class="loginImage">
+        <img src="../assets/notlog.png" class="loginImage">
         <span @click="login" class="loginText">登录</span>
       </div>
       <div @click.native="more" class="moreDiv">
-        <img src="../../assets/r_arrow.png" class="moreLogin">
+        <img src="../assets/r_arrow.png" class="moreLogin">
       </div>
     </div><!--导航最后-->
     <!-- 我的订单 -->
@@ -153,11 +153,11 @@ export default {
   .myorder>.ul{
     display:flex;
     justify-content:space-around;
-    margin-top:0.6rem;
+    margin-top:1rem;
   }
   .myorder>.ul>li>div{
     font-size:0.8rem;
-    margin-top:0.3rem;
+    margin-top:0.8rem;
     color:#6c6c6c;
   }
   /* 各种记录样式 */
@@ -180,7 +180,7 @@ export default {
   .recording>.recording-details>li>div{
     font-size:0.8rem;
     color:#6c6c6c;
-    margin-top:0.3rem;
+    margin-top:0.6rem;
   }
   /* 帮助中心 */
   .help{
@@ -204,6 +204,6 @@ export default {
   .help>.help-details>li>div{
     font-size:0.8rem;
     color:#6c6c6c;
-    margin-top:0.3rem;
+    margin-top:0.6rem;
   }
 </style>
