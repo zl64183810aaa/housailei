@@ -6,8 +6,8 @@
         <img src="../assets/notlog.png" class="loginImage">
         <span @click="login" class="loginText">登录</span>
       </div>
-      <div @click.native="more" class="moreDiv">
-        <img src="../assets/r_arrow.png" class="moreLogin">
+      <div class="moreDiv">
+        <img src="../assets/r_arrow.png"  @click="myprofile" class="moreLogin">
       </div>
     </div><!--导航最后-->
     <!-- 我的订单 -->
@@ -30,7 +30,7 @@
           <i class="iconfont icon-qianshou"></i>
           <div>已签收</div>
         </li>
-        <li>
+        <li @click="more">
           <i class="iconfont icon-ding_huabanfuben"></i>
           <div>全部订单</div>
         </li>
@@ -84,6 +84,12 @@ export default {
   methods:{
     login(){
       this.$router.push("/login")
+    },
+    more(){
+      this.$router.push("/Myorder")
+    },
+    myprofile(){
+      this.$router.push("/Myprofile")
     }
   }
 }
@@ -141,7 +147,7 @@ export default {
     border-radius:0.2rem;
   }
   .myorder>.left-order{
-    margin-left:-16rem;
+    margin-left:-76%;
     margin-top:0.3rem;
     font-size:1rem;
   }
@@ -154,6 +160,7 @@ export default {
     display:flex;
     justify-content:space-around;
     margin-top:1rem;
+    text-align: center;
   }
   .myorder>.ul>li>div{
     font-size:0.8rem;
@@ -171,6 +178,7 @@ export default {
   }
   .recording>.recording-details{
     display:flex;
+    text-align: center;
     justify-content:space-around;
   }
   .recording>.recording-details>li{
@@ -196,7 +204,7 @@ export default {
     display:flex;
     flex-wrap:wrap;
     justify-content:space-around;
-    
+    text-align: center;
   }
   .help>.help-details>li{
     margin-top:0.8rem;
